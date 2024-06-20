@@ -229,6 +229,7 @@ dtb-$(CONFIG_CLK_RK3568) += \
 	rk3568-spi3-m0-cs0-mcp2515.dtbo \
 	rk3568-spi3-m0-cs0-spidev.dtbo \
 	rk3568-spi3-m0-cs0-waveshare35.dtbo \
+	rk3568-spi3-m0-cs0-waveshare35b.dtbo \
 	rk3568-spi3-m0-cs1-spidev.dtbo \
 	rk3568-spi3-m1-cs0-enc28j60.dtbo \
 	rk3568-spi3-m1-cs0-mcp2515-gpio4_d1.dtbo \
