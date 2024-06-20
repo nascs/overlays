@@ -45,5 +45,5 @@ HDMI CEC function will be turned off when this overlay is enabled.";
 
 &hdmi {
 	pinctrl-names = "default";
-	pinctrl-0 = <&hdmitx_scl &hdmitx_sda>; 
+	pinctrl-0 = <&hdmitx_scl &hdmitx_sda>;
 };
