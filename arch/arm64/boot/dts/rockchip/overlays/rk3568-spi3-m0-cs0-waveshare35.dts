@@ -14,7 +14,8 @@
 &DISPLAY_SPI {
 	pinctrl-names = "default", "high_speed";
 	pinctrl-0 = <&spi3m0_cs0 &spi3m0_pins>;
-	pinctrl-1 = <&spi3m0_cs0 &spi3m0_pins_hs>;
+	num-cs = <2>;
+	cs-gpio = <&gpio4 RK_PC5 GPIO_ACTIVE_HIGH>;
 };
 
 &ili9486 {
