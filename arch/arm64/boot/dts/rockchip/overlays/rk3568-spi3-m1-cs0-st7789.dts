@@ -1,0 +1,30 @@
+#define DISPLAY_SPI spi3
+#include "st7789-lcd.dtsi"
+
+/ {
+
+    metadata {
+        title = "Enable Waveshare 1.47 inch LCD on SPI3-M1";
+        compatible = "radxa,rock-3c", "radxa,zero3";
+        category = "misc";
+        exclusive = "GPIO4_C2", "GPIO4_C3", "GPIO4_C5", "GPIO4_C6", "GPIO3_C1";
+        description = "Enable Waveshare 1.47 inch LCD on SPI3-M1.
+INT=22";
+    };
+};
+
+&DISPLAY_SPI {
+	pinctrl-names = "default", "high_speed";
+	pinctrl-0 = <&spi3m1_cs0 &spi3m1_pins>;
+	pinctrl-1 = <&spi3m1_cs1 &spi3m1_pins_hs>;
+};
+
+&st7789 {
+	reset-gpios = <&gpio3 RK_PC1 GPIO_ACTIVE_HIGH>;
+	dc-gpios = <&gpio3 RK_PB2 GPIO_ACTIVE_HIGH>;
+};
+
+&hdmi {
+	pinctrl-names = "default";
+	pinctrl-0 = <&hdmitx_scl &hdmitx_sda>; 
+};

@@ -1,0 +1,34 @@
+#ifndef __ST7789_LCD_DTSI__
+#define __ST7789_LCD_DTSI__
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/pinctrl/rockchip.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+
+/dts-v1/;
+/plugin/;
+
+#ifndef DISPLAY_SPI
+#error "DISPLAY_SPI is undefined."
+#endif
+
+&DISPLAY_SPI {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	st7789: st7789@0 {
+		compatible = "sitronix,st7789v";
+		reg = <0>;
+		spi-max-frequency = <16000000>;
+		txbuflen = <32768>;
+		rotate = <90>;
+		bgr = <0>;
+		fps = <30>;
+		buswidth = <8>;
+		regwidth = <16>;
+		debug = <0>;
+	};
+};
+
+#endif // __ST7789_LCD_DTSI__
