@@ -1,0 +1,15 @@
+/dts-v1/;
+/plugin/;
+
+#include "rk3588-spi0-m2-cs0-mcp2515-8mhz.dts"
+
+/ {
+    metadata {
+        compatible = "radxa,nx5-io", "radxa,cm5-rpi-cm4-io";
+        exclusive = "GPIO1_B2", "GPIO1_B1", "GPIO1_B3", "GPIO1_B4", "GPIO1_D0";
+		description = "Provide support for Microchip MCP2515 SPI CAN controller.
+Assumes 8MHz external clock.
+Uses Pin 22 (GPIO1_D0) for INT.";
+    };
+
+};
