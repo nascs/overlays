@@ -178,6 +178,7 @@ dtb-$(CONFIG_CLK_RK3568) += \
 	rk3568-can0-m0.dtbo \
 	rk3568-can1-m0.dtbo \
 	rk3568-can1-m1.dtbo \
+	rk3568-dht11-gpio3-a5.dtbo \
 	rk3568-disable-fiq-debugger.dtbo \
 	rk3568-dwc3-host.dtbo \
 	rk3568-dwc3-otg.dtbo \
@@ -198,8 +199,22 @@ dtb-$(CONFIG_CLK_RK3568) += \
 	rk3568-i2c2-m0-pca9555.dtbo \
 	rk3568-i2c2-m0.dtbo \
 	rk3568-i2c2-m1.dtbo \
+	rk3568-i2c3-m0-jc42.dtbo \
+	rk3568-i2c3-m0-mcp980x.dtbo \
+	rk3568-i2c3-m0-sc16is750.dtbo \
 	rk3568-i2c3-m0.dtbo \
 	rk3568-i2c3-m1.dtbo \
+	rk3568-i2c4-m0-bme280.dtbo \
+	rk3568-i2c4-m0-bme680.dtbo \
+	rk3568-i2c4-m0-bmp280.dtbo \
+	rk3568-i2c4-m0-bmp380.dtbo \
+	rk3568-i2c4-m0-htu21.dtbo \
+	rk3568-i2c4-m0-lm75.dtbo \
+	rk3568-i2c4-m0-pcf8574.dtbo \
+	rk3568-i2c4-m0-pcf8575.dtbo \
+	rk3568-i2c4-m0-sht41.dtbo \
+	rk3568-i2c4-m0-si7020.dtbo \
+	rk3568-i2c4-m0-tmp102.dtbo \
 	rk3568-i2c4-m0.dtbo \
 	rk3568-i2c5-m0.dtbo \
 	rk3568-npu-disable.dtbo \

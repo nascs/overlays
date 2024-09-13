@@ -1,0 +1,38 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/pinctrl/rockchip.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+
+/ {
+	metadata {
+		title = "Enable PCF8575 on I2C4-M0";
+		compatible = "radxa,rock-3c", "radxa,zero3";
+		category = "misc";
+		exclusive = "GPIO4_B2", "GPIO4_B3";
+		description = "Enable PCF8575 on I2C4-M0.
+On Radxa ROCK 3C this is SDA pin 27 and SCL pin 28, INT=3.
+On Radxa ZERO 3 this is SDA pin 27 and SCL pin 28, INT=3";
+	};
+};
+
+&i2c4 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c4m0_xfer>;
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	pcf8575: pcf8575@20 {
+		compatible = "nxp,pcf8575";
+		reg = <0x20>;
+		#gpio-controller;
+		#gpio-cells = <2>;
+		gpio-controller;
+		#interrupt-cells = <2>;
+		interrupt-parent = <&gpio3>;
+		interrupts = <RK_PC4 IRQ_TYPE_EDGE_FALLING>;
+		status = "okay";
+	};
+};

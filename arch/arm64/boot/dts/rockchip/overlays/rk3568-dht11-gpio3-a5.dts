@@ -1,0 +1,34 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/pinctrl/rockchip.h>
+
+/ {
+	metadata {
+		title = "Enable DHT11 on GPIO3_A5";
+		compatible = "radxa,rock-3c", "radxa,zero3";
+		category = "misc";
+		exclusive = "GPIO3_A5";
+		description = "Enable DHT11 on GPIO3_A5.
+On Radxa NX5 IO this is pin 40.";
+	};
+};
+
+&{/} {
+	dht11: dht11@0 {
+		compatible = "dht11";
+		pinctrl-names = "default";
+		pinctrl-0 = <&dht11_pin>;
+		gpios = <&gpio3 RK_PA5 GPIO_ACTIVE_HIGH>;
+		status = "okay";
+	};
+};
+
+&pinctrl {
+	dht11 {
+		dht11_pin: dht11-pin {
+			rockchip,pins = <3 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+};

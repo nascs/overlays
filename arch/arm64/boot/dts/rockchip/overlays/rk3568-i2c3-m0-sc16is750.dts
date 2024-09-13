@@ -1,0 +1,24 @@
+#include "rk3568-i2c3-m0.dts"
+
+&i2c3 {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+	sc16is750: sc16is750@48 {
+		compatible = "nxp,sc16is750";
+		reg = <0x48>;
+		clocks = <&sc16is750_clk>;
+		interrupt-parent = <&gpio>;
+		interrupts = <24 2>;
+		pinctrl-0 = <&int_pins>;
+		pinctrl-names = "default";
+		gpio-controller;
+		#gpio-cells = <2>;
+		i2c-max-frequency = <400000>;
+	};
+};
+
+
+&{/} {
+
+};
