@@ -1,0 +1,29 @@
+#define DISPLAY_SPI spi3
+#include "st77xx.dtsi"
+
+/ {
+	metadata {
+		title = "Enable ST7735 LCD on SPI3-M1";
+		compatible = "radxa,rock-3c", "radxa,zero3";
+		category = "display";
+		exclusive = "GPIO4_A6", "GPIO4_C6", "GPIO3_C1", "GPIO3_B2", "GPIO3_A1", "GPIO4_D1", "GPIO4_B2", "GPIO4_B3";
+		description = "Enable ST7735 LCD on SPI3-M1.
+HDMI CEC function will be turned off when this overlay is enabled.";
+	};
+};
+
+&DISPLAY_SPI {
+	pinctrl-names = "default", "high_speed";
+	pinctrl-0 = <&spi3m1_cs0 &spi3m1_pins>;
+	pinctrl-1 = <&spi3m1_cs1 &spi3m1_pins_hs>;
+};
+
+&st77xx {
+	reset-gpios = <&gpio3 RK_PC1 GPIO_ACTIVE_LOW>;
+	dc-gpios = <&gpio3 RK_PB2 GPIO_ACTIVE_HIGH>;
+};
+
+&hdmi {
+	pinctrl-names = "default";
+	pinctrl-0 = <&hdmitx_scl &hdmitx_sda>; 
+};
