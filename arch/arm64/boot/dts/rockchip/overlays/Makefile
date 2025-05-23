@@ -555,6 +555,7 @@ dtb-$(CONFIG_CPU_RK3588) += \
 	radxa-cm5-io-dwc3-host.dtbo \
 	radxa-cm5-io-okdo-5mp.dtbo \
 	radxa-cm5-io-radxa-display-8hd.dtbo \
+	radxa-cm5-io-radxa-display-8hd-simple-panel.dtbo \
 	radxa-cm5-io-radxa-camera-4k.dtbo \
 	radxa-cm5-io-radxa-camera-8m.dtbo \
 	radxa-cm5-io-radxa-display-10fhd.dtbo \
